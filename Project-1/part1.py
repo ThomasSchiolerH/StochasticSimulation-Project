@@ -110,7 +110,7 @@ N_target = 1000
 lifetimes_task4 = []
 while len(lifetimes_task4) < N_target:
     T, hist = simulate_patient()
-    if T >= 12 and any(s == 1 for s in hist[:12]):
+    if T >= 12 and any(s in (1, 2) for s in hist[:12]):
         lifetimes_task4.append(T)
 
 print("\nTask 4: E[lifetime | survive ≥12 & recurrence by 12] =",
